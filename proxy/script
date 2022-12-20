@@ -1,0 +1,12 @@
+Set proxy firefox
+Browsing http://p-fb.net/, http://info.cern.ch/
+Config: http://myproxy.com:1234/
+Modify input rule:
+	add: "bonjour":"xin chao" -> test
+	delete: 1 -> test, hello -> bonjour -> xin chao
+test: "hehe"
+Add out rule "hehe":"haha"
+Test input: hehe
+Test block website: protocol. browser Cache
+Upload blockrule2 (.png$) -> test
+Cache image

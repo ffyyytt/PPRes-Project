@@ -1,0 +1,3 @@
+Connection: Keep-Alive
+Proxy-Connection: Keep-Alive
+Accept-Encoding: gzip

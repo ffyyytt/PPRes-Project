@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proxy</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <h2>My proxy</h2>
+    <p>A "Proxy" server is a "mandatory" process, which will serve as an intermediary for communication between the Web client (the browser) and the Web server. This communication is organized according to the HTTP protocol, based on TCP.</p>
+    <h3>The role of the proxy is to:</h3>
+    <ul>
+        <li>Filter communications by prohibiting access to sites based on their content (following a list of keywords).</li>
+        <li>Serve as a "cache", ie to memorize the content of the most frequently visited pages and thus avoid having to retrieve them again from the server that hosts them.</li>
+        <li>The goal is to reduce data traffic towards the outside (the proxy is generally in the local network).</li>
+        <li>Modify the data transmitted (implementation of censorship for parental protection, for example).
+            <ul>
+                <li>Modify receive data: <a href="/inReplaceRules.html">Input replace Rules</a></li>
+                <li>Modify sent data: <a href="/outReplaceRules.html">Output replace Rules</a></li>
+                <li>Block web site: <a href="/blockRules.html">Block Rules</a></li>
+            </ul>
+        </li>
+        <li>Ensure better security. The client machines do not communicate directly with the servers located outside the local network, but only with the proxy (one can also prohibit any direct transaction, without going through the proxy, from a client to a server outside the using a firewall)</li>
+    </ul>
+    
+    <img src="proxy.png" alt="proxy">
+    <a href="/test.html">Test page</a>
+
+</body>
+</html>
