@@ -60,10 +60,17 @@ class ProxyServer:
 
     def parseHost(self, request):
         # get host and port from rquest
-        hostFull = request[request.find(b"Host")+6:request.find(b"\r\n", request.find(b"Host"))].decode() # parse full host:port
-        if (":" in hostFull):
-            return hostFull.split(":")[0], int(hostFull.split(":")[1])
-        return hostFull, 80 # incase no port default: 80
+        if (b"Host" in request and False): # case HTTP/1.1
+            hostFull = request[request.find(b"Host")+6:request.find(b"\r\n", request.find(b"Host"))].decode() # parse full host:port
+        else:
+            hostFull = self.parseURL(request)
+            if (b"://" in hostFull):
+                hostFull = hostFull.split(b"/")[2].decode()
+            else:
+                hostFull = hostFull.split(b"/")[0].decode()
+            if (":" in hostFull):
+                return hostFull.split(":")[0], int(hostFull.split(":")[1])
+            return hostFull, 80 # incase no port default: 80
 
     def filterIO(self, data, rules):
         # replace data by dictionary rules
